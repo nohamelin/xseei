@@ -1,0 +1,13 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+# Chrome registration
+content     xseei                       chrome/content/
+skin        xseei       classic/1.0     chrome/skin/
+locale      xseei       en-US           chrome/locale/en-US/
+locale      xseei       es-ES           chrome/locale/es-ES/
+
+# XUL overlays
+overlay     about:preferences           chrome://xseei/content/in-prefs.xul

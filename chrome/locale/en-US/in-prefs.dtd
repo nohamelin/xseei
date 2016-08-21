@@ -1,0 +1,10 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+
+<!ENTITY exportSelectedButton.label "Export to File…">
+<!ENTITY exportSelectedButton.accesskey "E">
+<!ENTITY import.description "You can import search engines from local XML files in the OpenSearch format.">
+<!ENTITY importButton.label "Import Search Engines from Files…">
+<!ENTITY importButton.accesskey "I">

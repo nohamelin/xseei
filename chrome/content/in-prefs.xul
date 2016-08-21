@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<?xml-stylesheet type="text/css" href="chrome://xseei/skin/in-prefs.css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://xseei/locale/in-prefs.dtd">
+
+
+<overlay id="xseei-incontent-preferences-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script type="application/javascript"
+            src="chrome://xseei/content/in-prefs.js"/>
+
+    <stringbundleset>
+        <stringbundle id="xseei-strings"
+                      src="chrome://xseei/locale/in-prefs.properties"/>
+    </stringbundleset>
+
+    <commandset>
+        <command id="xseei_exportSelectedEngineToFile"
+                 oncommand="xseei.exportSelectedEngineToFile()"/>
+        <command id="xseei_importEnginesFromFiles"
+                 oncommand="xseei.importEnginesFromFiles()"/>
+    </commandset>
+
+
+    <groupbox id="oneClickSearchProvidersGroup">
+
+        <button id="xseei-export-selected" hidden="true"
+                class="searchEngineAction"
+                label="&exportSelectedButton.label;"
+                accesskey="&exportSelectedButton.accesskey;"
+                command="xseei_exportSelectedEngineToFile"
+                disabled="true"/>
+
+        <vbox id="xseei-import-box"
+              align="start">
+
+            <label id="xseei-import-about" value="&import.description;"/>
+            <hbox align="center">
+                <button id="xseei-import"
+                        label="&importButton.label;"
+                        accesskey="&importButton.accesskey;"
+                        command="xseei_importEnginesFromFiles"/>
+            </hbox>
+
+        </vbox>
+    </groupbox>
+
+</overlay>
