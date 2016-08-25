@@ -40,7 +40,10 @@
               align="start">
 
             <hbox>
-                <label id="xseei-import-about" value="&import.description;"/>
+                <label id="xseei-import-about" flex="1">
+                    &import.description;
+                </label>
+                <spacer flex="999"/>  <!-- Allow the previous label to wrap -->
                 <label id="xseei-learn-more"
                        class="text-link"
                        value="&import.learn.label;"
