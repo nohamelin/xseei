@@ -39,7 +39,13 @@
         <vbox id="xseei-import-box"
               align="start">
 
-            <label id="xseei-import-about" value="&import.description;"/>
+            <hbox>
+                <label id="xseei-import-about" value="&import.description;"/>
+                <label id="xseei-learn-more"
+                       class="text-link"
+                       value="&import.learn.label;"
+                       href="https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox"/>
+            </hbox>
             <hbox align="center">
                 <button id="xseei-import"
                         label="&importButton.label;"

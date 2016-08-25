@@ -5,6 +5,7 @@
 
 <!ENTITY exportSelectedButton.label "Export to File…">
 <!ENTITY exportSelectedButton.accesskey "E">
-<!ENTITY import.description "You can import search engines from local XML files in the OpenSearch format.">
+<!ENTITY import.description "You can import search engines from local XML files in the OpenSearch format">
+<!ENTITY import.learn.label "Learn More">
 <!ENTITY importButton.label "Import Search Engines from Files…">
 <!ENTITY importButton.accesskey "I">
