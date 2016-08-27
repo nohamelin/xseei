@@ -23,12 +23,24 @@ const MOZSEARCH_NS = "http://www.mozilla.org/2006/browser/search/";
 const MOZSEARCH_LOCALNAME = "SearchPlugin";
 
 /*
- * The empty base document used to serialize an engine. It uses the Mozilla
- * namespace by default, such as Firefox does.   TODO: Let to choose it.
+ * The different available alternatives for the empty base document used to
+ * serialize an engine.
  */
-const EMPTY_ENGINE_DOC = `<?xml version="1.0"?>
+const OPENSEARCH_EMPTY_ENGINE_DOC = `<?xml version="1.0"?>
+<${OPENSEARCH_LOCALNAME} xmlns="${OPENSEARCH_NS}" xmlns:moz="${MOZSEARCH_NS}"/>
+`;
+const MOZSEARCH_EMPTY_ENGINE_DOC = `<?xml version="1.0"?>
 <${MOZSEARCH_LOCALNAME} xmlns="${MOZSEARCH_NS}" xmlns:os="${OPENSEARCH_NS}"/>
 `;
+Object.defineProperty(this, "emptyEngineDoc", {
+    get: function() {
+        let useMozNs = Services.prefs.getBoolPref(
+                        "extensions.xseei.exporter.useMozNamespaceAsDefault");
+        return useMozNs ? MOZSEARCH_EMPTY_ENGINE_DOC
+                        : OPENSEARCH_EMPTY_ENGINE_DOC;
+    },
+    enumerable: true
+});
 
 const MAX_ENGINE_FILENAME_LENGTH = 60;
 
@@ -119,7 +131,7 @@ var SearchEngines = {
 
         let doc = Cc["@mozilla.org/xmlextras/domparser;1"]
                     .createInstance(Ci.nsIDOMParser)
-                    .parseFromString(EMPTY_ENGINE_DOC, "application/xml");
+                    .parseFromString(emptyEngineDoc, "application/xml");
 
         doc.documentElement.appendChild(doc.createTextNode("\n"));
         appendTextNode(doc, OPENSEARCH_NS, "ShortName", e.name);
