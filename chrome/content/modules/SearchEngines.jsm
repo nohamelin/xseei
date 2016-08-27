@@ -204,7 +204,8 @@ var SearchEngines = {
      */
     sanitizeEngineName(name) {
         name = name.toLowerCase()
-                   .replace(/\s+/g, "-")
+                   .replace(/\s+/g, "-")    // Replace spaces with a hyphen
+                   .replace(/-{2,}/g, "-")  // Reduce consecutive hyphens
                    .replace(/[^-a-z0-9]/g, "");
 
         if (name.length < 1)
