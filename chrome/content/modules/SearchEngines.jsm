@@ -113,10 +113,13 @@ var SearchEngines = {
         let doc = this.serializeEngineToDocument(engine);
         let data = serializer.serializeToString(doc);
 
+        let useTmpFile = Services.prefs.getBoolPref(
+                            "extensions.xseei.exporter.useTemporaryFile");
+        let tmpFile = useTmpFile ? file.path + ".tmp" : null;
+
         return OS.File.writeAtomic(file.path,
                                    data,
-                                   {encoding: "utf-8",
-                                    tmpPath: file.path + ".tmp"});
+                                   {encoding: "utf-8", tmpPath: tmpFile});
     },
 
 

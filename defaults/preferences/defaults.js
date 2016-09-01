@@ -3,3 +3,4 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 pref("extensions.xseei.exporter.useMozNamespaceAsDefault", true);
+pref("extensions.xseei.exporter.useTemporaryFile", true);
