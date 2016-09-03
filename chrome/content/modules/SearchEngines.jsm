@@ -206,7 +206,8 @@ var SearchEngines = {
         name = name.toLowerCase()
                    .replace(/\s+/g, "-")    // Replace spaces with a hyphen
                    .replace(/-{2,}/g, "-")  // Reduce consecutive hyphens
-                   .replace(/[^-a-z0-9]/g, "");
+                   .normalize("NFKD")       // Decompose chars with diacritics
+                   .replace(/[^-a-z0-9]/g, "");     // Final cleaning
 
         if (name.length < 1)
             name = Math.random().toString(36).replace(/^.*\./, "");
@@ -214,4 +215,3 @@ var SearchEngines = {
         return name.substring(0, MAX_ENGINE_FILENAME_LENGTH);
     }
 };
-
