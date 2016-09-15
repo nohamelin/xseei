@@ -2,10 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-
+<!-- It refers to a search engine -->
 <!ENTITY exportSelectedButton.label "Exportar a archivo…">
+<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
 <!ENTITY exportSelectedButton.accesskey "x">
+<!-- Don't translate the "OpenSearch" string -->
 <!ENTITY import.description "Puede importar nuevos buscadores desde archivos XML en el formato OpenSearch">
+<!-- Translate it in the same way as the "Learn More" buttons present in other panes of the Preferences page -->
 <!ENTITY import.learn.label "Saber más">
 <!ENTITY importButton.label "Importar buscadores desde archivos…">
+<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
 <!ENTITY importButton.accesskey "I">
