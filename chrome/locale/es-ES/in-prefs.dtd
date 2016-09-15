@@ -4,7 +4,7 @@
 
 
 <!ENTITY exportSelectedButton.label "Exportar a archivo…">
-<!ENTITY exportSelectedButton.accesskey "E">
+<!ENTITY exportSelectedButton.accesskey "x">
 <!ENTITY import.description "Puede importar nuevos buscadores desde archivos XML en el formato OpenSearch">
 <!ENTITY import.learn.label "Saber más">
 <!ENTITY importButton.label "Importar buscadores desde archivos…">
