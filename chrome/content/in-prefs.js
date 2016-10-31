@@ -86,6 +86,28 @@ var xseei = {
     },
 
 
+    exportAllEnginesToFile() {
+        let fp = Cc["@mozilla.org/filepicker;1"]
+                    .createInstance(Ci.nsIFilePicker);
+
+        fp.init(window,
+                this.strings.getString("exportAllDialogTitle"),
+                Ci.nsIFilePicker.modeSave);
+        fp.defaultString = "searchengines.zip";     // TODO: Let to change it
+        fp.open({
+            done: result => {
+                if (result === Ci.nsIFilePicker.returnCancel)
+                    return;
+
+                let engines = Services.search.getVisibleEngines();
+
+                this.SearchEngines.saveEnginesToZipFile(engines, fp.file)
+                    .catch(Cu.reportError);
+            }
+        });
+    },
+
+
     importEnginesFromFiles() {
         let fp = Cc["@mozilla.org/filepicker;1"]
                     .createInstance(Ci.nsIFilePicker);

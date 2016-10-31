@@ -13,3 +13,6 @@
 <!ENTITY importButton.label "Importar buscadores desde archivos…">
 <!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
 <!ENTITY importButton.accesskey "I">
+<!ENTITY exportAllButton.label "Exportar todos los buscadores a archivo…">
+<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!ENTITY exportAllButton.accesskey "t">

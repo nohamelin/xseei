@@ -22,6 +22,8 @@
     <commandset>
         <command id="xseei_exportSelectedEngineToFile"
                  oncommand="xseei.exportSelectedEngineToFile()"/>
+        <command id="xseei_exportAllEnginesToFile"
+                 oncommand="xseei.exportAllEnginesToFile()"/>
         <command id="xseei_importEnginesFromFiles"
                  oncommand="xseei.importEnginesFromFiles()"/>
     </commandset>
@@ -36,26 +38,29 @@
                 command="xseei_exportSelectedEngineToFile"
                 disabled="true"/>
 
-        <vbox id="xseei-import-box"
-              align="start">
-
-            <hbox>
+        <vbox id="xseei-import-box">
+            <hbox pack="start">
                 <label id="xseei-import-about" flex="1">
                     &import.description;
                 </label>
-                <spacer flex="999"/>  <!-- Allow the previous label to wrap -->
                 <label id="xseei-learn-more"
                        class="text-link"
                        value="&import.learn.label;"
                        href="https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox"/>
+                <spacer flex="999"/>  <!-- Allow the description to wrap -->
             </hbox>
+
             <hbox align="center">
                 <button id="xseei-import"
                         label="&importButton.label;"
                         accesskey="&importButton.accesskey;"
                         command="xseei_importEnginesFromFiles"/>
+                <spacer flex="1"/>
+                <button id="xseei-export-all"
+                        label="&exportAllButton.label;"
+                        accesskey="&exportAllButton.accesskey;"
+                        command="xseei_exportAllEnginesToFile"/>
             </hbox>
-
         </vbox>
     </groupbox>
 

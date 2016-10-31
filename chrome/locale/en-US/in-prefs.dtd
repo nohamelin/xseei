@@ -13,3 +13,6 @@
 <!ENTITY importButton.label "Import Search Engines from Files…">
 <!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
 <!ENTITY importButton.accesskey "I">
+<!ENTITY exportAllButton.label "Export All Search Engines to File…">
+<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!ENTITY exportAllButton.accesskey "A">

@@ -12,6 +12,8 @@ const { classes: Cc, interfaces: Ci, utils: Cu } = Components;
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
 
+XPCOMUtils.defineLazyModuleGetter(this, "FileUtils",
+    "resource://gre/modules/FileUtils.jsm");
 XPCOMUtils.defineLazyModuleGetter(this, "OS",
     "resource://gre/modules/osfile.jsm");
 
@@ -102,6 +104,35 @@ var SearchEngines = {
                                       "",       // iconURL
                                       false,    // confirm
                                       searchInstallCallback);
+        });
+    },
+
+
+    saveEnginesToZipFile(engines, file) {
+        return Promise.resolve().then(() => {
+            let zw = Cc["@mozilla.org/zipwriter;1"]
+                        .createInstance(Ci.nsIZipWriter);
+            zw.open(file,
+                    FileUtils.MODE_WRONLY | FileUtils.MODE_CREATE
+                                          | FileUtils.MODE_TRUNCATE);
+
+            let serializer = Cc["@mozilla.org/xmlextras/xmlserializer;1"]
+                                .createInstance(Ci.nsIDOMSerializer);
+
+            engines.forEach(engine => {
+                let doc = this.serializeEngineToDocument(engine);
+
+                let istream = Cc["@mozilla.org/io/string-input-stream;1"]
+                                .createInstance(Ci.nsIStringInputStream);
+                istream.data = serializer.serializeToString(doc);
+
+                zw.addEntryStream(this.sanitizeEngineName(engine.name) + ".xml",
+                                  Date.now() * 1000,
+                                  Ci.nsIZipWriter.COMPRESSION_DEFAULT,
+                                  istream,
+                                  false);
+            });
+            zw.close();
         });
     },
 
