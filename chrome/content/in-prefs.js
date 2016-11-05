@@ -28,6 +28,11 @@ document.addEventListener("Initialized", function onInitialized() {
 
 var xseei = {
 
+    get prefs() {
+        delete this.prefs;
+        return this.prefs = Services.prefs.getBranch("extensions.xseei.");
+    },
+
     get strings() {
         delete this.strings;
         return this.strings = document.getElementById("xseei-strings");
@@ -87,13 +92,25 @@ var xseei = {
 
 
     exportAllEnginesToFile() {
+        let defaultFileNameFromUser = () => {
+            let name = this.prefs.getComplexValue("exportAll.defaultFileName",
+                                                  Ci.nsISupportsString).data;
+            if (name && !name.endsWith(".zip"))
+                name += ".zip";
+
+            return name;
+        };
+
         let fp = Cc["@mozilla.org/filepicker;1"]
                     .createInstance(Ci.nsIFilePicker);
 
         fp.init(window,
                 this.strings.getString("exportAllDialogTitle"),
                 Ci.nsIFilePicker.modeSave);
-        fp.defaultString = "searchengines.zip";     // TODO: Let to change it
+        fp.appendFilter(this.strings
+                            .getString("exportAllDialog.zipFilter.title"),
+                        "*.zip");
+        fp.defaultString = defaultFileNameFromUser() || "searchengines.zip";
         fp.open({
             done: result => {
                 if (result === Ci.nsIFilePicker.returnCancel)

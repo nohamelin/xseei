@@ -4,3 +4,4 @@
 
 pref("extensions.xseei.exporter.useMozNamespaceAsDefault", true);
 pref("extensions.xseei.exporter.useTemporaryFile", true);
+pref("extensions.xseei.exportAll.defaultFileName", "searchengines");
