@@ -85,6 +85,7 @@ var xseei = {
         fp.appendFilters(Ci.nsIFilePicker.filterXML);
         fp.defaultString = this.SearchEngines.sanitizeEngineName(engine.name)
                             + ".xml";
+        fp.defaultExtension = "xml";
         fp.open({
             done: result => {
                 if (result === Ci.nsIFilePicker.returnCancel)
@@ -122,6 +123,7 @@ var xseei = {
                             .getString("exportAllDialog.zipFilter.title"),
                         "*.zip");
         fp.defaultString = filename;
+        fp.defaultExtension = "zip";
         fp.open({
             done: result => {
                 if (result === Ci.nsIFilePicker.returnCancel)
