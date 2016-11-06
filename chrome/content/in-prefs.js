@@ -33,6 +33,12 @@ var xseei = {
         return this.prefs = Services.prefs.getBranch("extensions.xseei.");
     },
 
+    get defaultPrefs() {
+        delete this.defaultPrefs;
+        return this.defaultPrefs = Services.prefs.getDefaultBranch(
+                                                    "extensions.xseei.");
+    },
+
     get strings() {
         delete this.strings;
         return this.strings = document.getElementById("xseei-strings");
@@ -92,14 +98,19 @@ var xseei = {
 
 
     exportAllEnginesToFile() {
-        let defaultFileNameFromUser = () => {
-            let name = this.prefs.getComplexValue("exportAll.defaultFileName",
-                                                  Ci.nsISupportsString).data;
-            if (name && !name.endsWith(".zip"))
-                name += ".zip";
+        // Build the filename offered as default in the filepicker
+        let filename = this.prefs.getComplexValue("exportAll.defaultFileName",
+                                                  Ci.nsISupportsString).data
+                       || this.defaultPrefs.getCharPref(
+                                                "exportAll.defaultFileName");
+        let now = new Date();
+        // toLocaleFormat expects the same format as strftime() in C:
+        //   http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html
+        filename = now.toLocaleFormat(filename).replace(/\//gm, "-");
 
-            return name;
-        };
+        if (!filename.endsWith(".zip"))
+            filename += ".zip";
+
 
         let fp = Cc["@mozilla.org/filepicker;1"]
                     .createInstance(Ci.nsIFilePicker);
@@ -110,7 +121,7 @@ var xseei = {
         fp.appendFilter(this.strings
                             .getString("exportAllDialog.zipFilter.title"),
                         "*.zip");
-        fp.defaultString = defaultFileNameFromUser() || "searchengines.zip";
+        fp.defaultString = filename;
         fp.open({
             done: result => {
                 if (result === Ci.nsIFilePicker.returnCancel)
