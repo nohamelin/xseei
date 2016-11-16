@@ -37,6 +37,15 @@
                 <em:creator>nohamelin</em:creator>
             </Description>
         </em:localized>
+        <em:localized> <!-- Simplified Chinese -->
+            <Description>
+                <em:locale>zh-CN</em:locale>
+                <em:name>XML Search Engines Exporter/Importer</em:name>
+                <em:description>Import and export search engines from XML files in the OpenSearch format</em:description>
+                <em:creator>nohamelin</em:creator>
+                <em:translator>YFdyh000</em:translator>
+            </Description>
+        </em:localized>
 
     </Description>
 </RDF>
