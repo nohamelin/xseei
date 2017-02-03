@@ -183,7 +183,7 @@ var SearchEngines = {
         appendTextNode(doc, MOZSEARCH_NS, "UpdateInterval", e._updateInterval);
         appendTextNode(doc, MOZSEARCH_NS, "UpdateUrl", e._updateURL);
         appendTextNode(doc, MOZSEARCH_NS, "IconUpdateUrl", e._iconUpdateURL);
-        appendTextNode(doc, MOZSEARCH_NS, "SearchForm", e._searchForm);
+        appendTextNode(doc, MOZSEARCH_NS, "SearchForm", e.searchForm);
         if (e._extensionID)
             appendTextNode(doc, MOZSEARCH_NS, "ExtensionID", e._extensionID);
 
