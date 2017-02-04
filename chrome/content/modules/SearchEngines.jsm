@@ -214,13 +214,35 @@ var SearchEngines = {
         if (engineUrl.resultDomain)
             url.setAttribute("resultDomain", engineUrl.resultDomain);
 
-        for (let i = 0; i < engineUrl.params.length; ++i) {
-            let param = doc.createElementNS(OPENSEARCH_NS, "Param");
+        // Default search engines can include non-standard search parameters
+        // used, originally, to have data based in the value of a preference:
+        //   https://bugzilla.mozilla.org/show_bug.cgi?id=351817
+        // Or simply to include some extra usage info, e.g.:
+        //   https://bugzilla.mozilla.org/show_bug.cgi?id=587780
+        //
+        // For the moment, we aren't exporting these.
+        let hasMozParams = Object.keys(engineUrl.mozparams).length > 0;
 
+        for (let i = 0; i < engineUrl.params.length; ++i) {
+            if (engineUrl.params[i].purpose) {
+                hasMozParams = true;
+                continue;
+            }
+            let param = doc.createElementNS(OPENSEARCH_NS, "Param");
             param.setAttribute("name", engineUrl.params[i].name);
             param.setAttribute("value", engineUrl.params[i].value);
             url.appendChild(doc.createTextNode("\n  "));
             url.appendChild(param);
+        }
+        if (hasMozParams) {
+            url.appendChild(doc.createTextNode("\n  "));
+            url.appendChild(doc.createComment(
+                "The original definition of this search engine included " +
+                "some non-standard 'MozParam' parameters too. As they are " +
+                "recognized by Firefox only if they are found in an engine " +
+                "included by default in the application, they were omitted " +
+                "here."));
+            // TODO: Export the MozParams too (?)
         }
         url.appendChild(doc.createTextNode("\n"));
 
