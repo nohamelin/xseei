@@ -46,6 +46,12 @@ Object.defineProperty(this, "emptyEngineDoc", {
 
 const MAX_ENGINE_FILENAME_LENGTH = 60;
 
+const ABOUT_MOZPARAMS_EXPORT_MSG =
+    "The original definition of this search engine included too some " +
+    "non-standard 'MozParam' parameters. As they are recognized by " +
+    "Firefox only if they are found in an engine included by default in " +
+    "the application, they were omitted here.";
+
 
 function appendTextNode(document, namespace, localName, value) {
     if (!value)
@@ -236,12 +242,7 @@ var SearchEngines = {
         }
         if (hasMozParams) {
             url.appendChild(doc.createTextNode("\n  "));
-            url.appendChild(doc.createComment(
-                "The original definition of this search engine included " +
-                "some non-standard 'MozParam' parameters too. As they are " +
-                "recognized by Firefox only if they are found in an engine " +
-                "included by default in the application, they were omitted " +
-                "here."));
+            url.appendChild(doc.createComment(ABOUT_MOZPARAMS_EXPORT_MSG));
             // TODO: Export the MozParams too (?)
         }
         url.appendChild(doc.createTextNode("\n"));
