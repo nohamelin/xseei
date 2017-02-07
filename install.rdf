@@ -41,7 +41,7 @@
             <Description>
                 <em:locale>zh-CN</em:locale>
                 <em:name>XML Search Engines Exporter/Importer</em:name>
-                <em:description>Import and export search engines from XML files in the OpenSearch format</em:description>
+                <em:description>导入和导出 XML 文件中 OpenSearch 格式的搜索引擎</em:description>
                 <em:creator>nohamelin</em:creator>
                 <em:translator>YFdyh000</em:translator>
             </Description>
