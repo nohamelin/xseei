@@ -173,7 +173,12 @@ var xseei = {
                 });
 
                 sequence.then(() => {
-                    // Do something with importedEngines; nothing for now
+                    // Ensure the last imported engine is visible and selected
+                    if (importedEngines.length > 0) {
+                        gEngineView.selection.select(gEngineView.lastIndex);
+                        gEngineView.ensureRowIsVisible(gEngineView.lastIndex);
+                        document.getElementById("engineList").focus();
+                    }
                 });
             }
         });
