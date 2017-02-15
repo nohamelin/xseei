@@ -1,8 +1,15 @@
 XML Search Engines Exporter/Importer (XSEEI)
 --------------------------------------------
 
-A lightweight add-on for Mozilla Firefox to import and export search engines from XML files in the [OpenSearch format] (https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox).
+A lightweight add-on for Mozilla Firefox to import and export search engines from XML files in the OpenSearch format.
 The latest public release can be installed from the [main page of the add-on in addons.mozilla.org (AMO)](https://addons.mozilla.org/addon/search-engines-export-import).
+
+
+### Resources
+
+* [Creating OpenSearch plugins for Firefox | Mozilla Developer Network](https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox)
+* [The specification of the OpenSearch description format](http://www.opensearch.org/Specifications/OpenSearch/1.1#OpenSearch_description_document)
+* [*What about search hijacking?*](http://blog.queze.net/post/2015/11/02/What-about-search-hijacking) it presents the main upstream motivations to get rid of the XML-based storage system for search engines, a work landed in Firefox 45.
 
 
 ### Contact, contribute
