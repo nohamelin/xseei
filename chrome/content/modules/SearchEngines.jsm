@@ -85,23 +85,17 @@ var SearchEngines = {
                     resolve(engine);
                 },
                 onError: errorCode => {
-                    let errorMsg;
                     switch (errorCode) {
                         case Ci.nsISearchInstallCallback.ERROR_DUPLICATE_ENGINE:
-                            errorMsg = "a search engine with the included " +
-                                       "name already exists";
+                            reject(Error("a search engine with the included " +
+                                         "name already exists"));
                             break;
 
                         case Ci.nsISearchInstallCallback.ERROR_UNKNOWN_FAILURE:
                         default:
-                            errorMsg = "unknown error";
+                            reject(Error("unknown error"));
                             break;
                     }
-
-                    let filename = file.leafName;
-                    reject(new Error("The creation of a search engine from " +
-                                     "the file '" + filename + "' failed: " +
-                                     errorMsg));
                 }
             };
 

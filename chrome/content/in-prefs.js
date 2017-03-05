@@ -169,7 +169,13 @@ var xseei = {
                         return this.SearchEngines.addEngineFromXmlFile(file);
                     }).then(engine => {
                         importedEngines.push(engine);
-                    }).catch(Cu.reportError);  // Report each engine separately
+                    }).catch(err => {  // Each engine is reported separately
+                        Cu.reportError(
+                            "Import of a search engine from the file '" +
+                            file.leafName + "' failed: " + err.message || err);
+                        // TODO: Warn directly to the user about it too. But
+                        // I'm unsure how the UI should manage multiple errors.
+                    });
                 });
 
                 sequence.then(() => {
