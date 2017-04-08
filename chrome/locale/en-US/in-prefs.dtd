@@ -4,15 +4,15 @@
 
 <!-- It refers to a search engine -->
 <!ENTITY exportSelectedButton.label "Export to File…">
-<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportSelectedButton.accesskey "E">
 <!-- Don't translate the "OpenSearch" string -->
 <!ENTITY import.description "You can import search engines from local XML files in the OpenSearch format">
 <!-- Translate it in the same way as the "Learn More" buttons present in other panes of the Preferences page -->
 <!ENTITY import.learn.label "Learn More">
 <!ENTITY importButton.label "Import Search Engines from Files…">
-<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY importButton.accesskey "I">
 <!ENTITY exportAllButton.label "Export All Search Engines to File…">
-<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportAllButton.accesskey "A">

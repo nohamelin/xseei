@@ -4,7 +4,8 @@
 
 
 /*
- * In the search pane of about:preferences, the hbox containing contextual
+ * In the search pane of about:preferences (general pane instead, after the
+ * options re-arrangenment landed in Fx 55), the hbox containing contextual
  * actions for the selected engine does not have an id, so we can't overlay it.
  * Instead, we do it programmatically.
  */

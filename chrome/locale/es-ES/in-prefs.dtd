@@ -11,8 +11,8 @@
 <!-- Translate it in the same way as the "Learn More" buttons present in other panes of the Preferences page -->
 <!ENTITY import.learn.label "Saber más">
 <!ENTITY importButton.label "Importar buscadores desde archivos…">
-<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY importButton.accesskey "I">
 <!ENTITY exportAllButton.label "Exportar todos los buscadores a archivo…">
-<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportAllButton.accesskey "t">
