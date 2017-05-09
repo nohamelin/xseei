@@ -59,11 +59,12 @@ var xseei = {
 
     ////////////////////////////////////////////////////////////////////////////
 
-    handleEvent: function(event) {
+    handleEvent(event) {
         switch (event.type) {
             case "select":
-                if (event.target.id === "engineList")
+                if (event.target.id === "engineList") {
                     this.onTreeSelect();
+                }
                 break;
         }
     },
