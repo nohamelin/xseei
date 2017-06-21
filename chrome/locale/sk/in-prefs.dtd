@@ -1,0 +1,18 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!-- It refers to a search engine -->
+<!ENTITY exportSelectedButton.label "Export do súboru…">
+<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!ENTITY exportSelectedButton.accesskey "E">
+<!-- Don't translate the "OpenSearch" string -->
+<!ENTITY import.description "Môžete importovať vyhľadávacie moduly z lokálnych XML súborov v OpenSearch formáte">
+<!-- Translate it in the same way as the "Learn More" buttons present in other panes of the Preferences page -->
+<!ENTITY import.learn.label "Ďalšie informácie">
+<!ENTITY importButton.label "Import vyhľadávacích modulov zo súborov…">
+<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!ENTITY importButton.accesskey "I">
+<!ENTITY exportAllButton.label "Export všetkých vyhľadávacích modulov do súboru…">
+<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!ENTITY exportAllButton.accesskey "A">

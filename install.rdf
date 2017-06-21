@@ -37,6 +37,15 @@
                 <em:creator>nohamelin</em:creator>
             </Description>
         </em:localized>
+        <em:localized> <!-- Slovak -->
+            <Description>
+                <em:locale>sk</em:locale>
+                <em:name>XML Search Engines Exporter/Importer</em:name>
+                <em:description>Import a export vyhľadávacích modulov z a do XML v OpenSearch formáte</em:description>
+                <em:creator>nohamelin</em:creator>
+                <em:translator>sklado</em:translator>
+            </Description>
+        </em:localized>
         <em:localized> <!-- Simplified Chinese -->
             <Description>
                 <em:locale>zh-CN</em:locale>
