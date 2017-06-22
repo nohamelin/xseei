@@ -11,7 +11,7 @@
     <!-- General Info -->
         <em:id>xseei@nohamelin</em:id>
         <em:type>2</em:type>
-        <em:version>0.3.2</em:version>
+        <em:version>0.3.3</em:version>
         <em:name>XML Search Engines Exporter/Importer</em:name>
 
         <em:description>Import and export search engines from XML files in the OpenSearch format</em:description>
