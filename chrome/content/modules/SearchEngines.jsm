@@ -118,13 +118,14 @@ var SearchEngines = {
 
             let serializer = Cc["@mozilla.org/xmlextras/xmlserializer;1"]
                                 .createInstance(Ci.nsIDOMSerializer);
+            let converter = Cc["@mozilla.org/intl/scriptableunicodeconverter"]
+                            .createInstance(Ci.nsIScriptableUnicodeConverter);
+            converter.charset = "UTF-8";
 
             engines.forEach(engine => {
                 let doc = this.serializeEngineToDocument(engine);
-
-                let istream = Cc["@mozilla.org/io/string-input-stream;1"]
-                                .createInstance(Ci.nsIStringInputStream);
-                istream.data = serializer.serializeToString(doc);
+                let str = serializer.serializeToString(doc);
+                let istream = converter.convertToInputStream(str);
 
                 zw.addEntryStream(this.sanitizeEngineName(engine.name) + ".xml",
                                   Date.now() * 1000,
