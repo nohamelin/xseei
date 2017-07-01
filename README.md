@@ -15,7 +15,7 @@ The latest public release can be installed from the [main page of the add-on in 
 ### Contact, contribute
 
 * Questions, bug reports and feature requests are tracked in the [issues](https://github.com/nohamelin/xseei/issues) page. You will need to have a GitHub account to post here. Alternatively, there is a [thread in the MozillaZine forums](http://forums.mozillazine.org/viewtopic.php?f=48&t=3020165) open to general discussion.
-* Translations are managed via the [Crowdin](https://crowdin.com/project/xseei) platform. These has been kindly provided by volunteers. Please go there if you want to collaborate updating or starting a new localization; no technical knowledge is required.
+* Translations are managed via the [Crowdin](https://crowdin.com/project/xseei) platform. These have been kindly provided by volunteers. Please go there if you want to collaborate updating or starting a new localization; no technical knowledge is required.
 * About code contributions via pull requests: before to start one, [**please create a new branch**](https://help.github.com/articles/creating-a-pull-request/) in your repository to accommodate your commits; it makes things easier if you need to do further amendments to your code.
 
 
