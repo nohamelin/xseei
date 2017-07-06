@@ -16,3 +16,6 @@
 <!ENTITY exportAllButton.label "Exportar todos los buscadores a archivo…">
 <!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportAllButton.accesskey "t">
+<!ENTITY exportNonDefaultsButton.label "Exportar todos los buscadores no predeterminados a archivo…">
+<!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
+<!ENTITY exportNonDefaultsButton.accesskey "N">

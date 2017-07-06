@@ -24,6 +24,8 @@
                  oncommand="xseei.exportSelectedEngineToFile()"/>
         <command id="xseei_exportAllEnginesToFile"
                  oncommand="xseei.exportAllEnginesToFile()"/>
+        <command id="xseei_exportCustomEnginesToFile"
+                 oncommand="xseei.exportCustomEnginesToFile()"/>
         <command id="xseei_importEnginesFromFiles"
                  oncommand="xseei.importEnginesFromFiles()"/>
     </commandset>
@@ -55,11 +57,17 @@
                         label="&importButton.label;"
                         accesskey="&importButton.accesskey;"
                         command="xseei_importEnginesFromFiles"/>
-                <spacer flex="1"/>
+            </hbox>
+            <separator class="thin"/>
+            <hbox align="center">
                 <button id="xseei-export-all"
                         label="&exportAllButton.label;"
                         accesskey="&exportAllButton.accesskey;"
                         command="xseei_exportAllEnginesToFile"/>
+                <button id="xseei-export-customs"
+                        label="&exportNonDefaultsButton.label;"
+                        accesskey="&exportNonDefaultsButton.accesskey;"
+                        command="xseei_exportCustomEnginesToFile"/>
             </hbox>
         </vbox>
     </groupbox>

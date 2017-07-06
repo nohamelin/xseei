@@ -6,9 +6,11 @@
 
 
 /*
- * It matches the styling applied upstream to #removeEngineButton and others.
+ * It matches the styling applied upstream to #restoreDefaultSearchEngines
+ * and others.
  */
-#xseei-import {
+#xseei-import,
+#xseei-export-all {
     margin-inline-start: 0;
 }
 

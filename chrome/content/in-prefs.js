@@ -101,15 +101,39 @@ var xseei = {
 
 
     exportAllEnginesToFile() {
-        // Build the filename offered as default in the filepicker
-        let filename = this.prefs.getComplexValue("exportAll.defaultFileName",
+        let engines = Services.search.getVisibleEngines();
+
+        let filenamepref = "exportAll.defaultFileName";
+        let filename = this.prefs.getComplexValue(filenamepref,
                                                   Ci.nsISupportsString).data
-                       || this.defaultPrefs.getCharPref(
-                                                "exportAll.defaultFileName");
+                       || this.defaultPrefs.getCharPref(filenamepref);
+
+        let title = this.strings.getString("exportAllDialogTitle");
+
+        this._exportEnginesToZipFile(engines, filename, title);
+    },
+
+
+    exportCustomEnginesToFile() {
+        let engines = this.SearchEngines.getCustomEngines();
+
+        let filenamepref = "exportNonDefaults.defaultFileName";
+        let filename = this.prefs.getComplexValue(filenamepref,
+                                                  Ci.nsISupportsString).data
+                       || this.defaultPrefs.getCharPref(filenamepref);
+
+        let title = this.strings.getString("exportNonDefaultsDialogTitle");
+
+        this._exportEnginesToZipFile(engines, filename, title);
+    },
+
+
+    _exportEnginesToZipFile(engines, filenameFormat, filePickerTitle) {
         let now = new Date();
         // toLocaleFormat expects the same format as strftime() in C:
         //   http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html
-        filename = now.toLocaleFormat(filename).replace(/\//gm, "-");
+        let filename = now.toLocaleFormat(filenameFormat)
+                          .replace(/\//gm, "-");
 
         if (!filename.endsWith(".zip"))
             filename += ".zip";
@@ -118,11 +142,9 @@ var xseei = {
         let fp = Cc["@mozilla.org/filepicker;1"]
                     .createInstance(Ci.nsIFilePicker);
 
-        fp.init(window,
-                this.strings.getString("exportAllDialogTitle"),
-                Ci.nsIFilePicker.modeSave);
+        fp.init(window, filePickerTitle, Ci.nsIFilePicker.modeSave);
         fp.appendFilter(this.strings
-                            .getString("exportAllDialog.zipFilter.title"),
+                            .getString("dialogs.zipFilter.title"),
                         "*.zip");
         fp.defaultString = filename;
         fp.defaultExtension = "zip";
@@ -130,8 +152,6 @@ var xseei = {
             done: result => {
                 if (result === Ci.nsIFilePicker.returnCancel)
                     return;
-
-                let engines = Services.search.getVisibleEngines();
 
                 this.SearchEngines.saveEnginesToZipFile(engines, fp.file)
                     .catch(Cu.reportError);

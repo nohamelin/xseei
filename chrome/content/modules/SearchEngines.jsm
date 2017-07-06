@@ -76,6 +76,19 @@ function appendTextNode(document, namespace, localName, value) {
  */
 var SearchEngines = {
 
+    /*
+     * Returns an array of all search engines (nsISearchEngines objects)
+     * installed by the user himself. It could be empty.
+     */
+    getCustomEngines() {
+        let engines = Services.search.getVisibleEngines();
+        let defaults = Services.search.getDefaultEngines();
+        engines = engines.filter(e => !defaults.includes(e));
+
+        return engines;
+    },
+
+
     addEngineFromXmlFile(file) {
         return new Promise((resolve, reject) => {
             let uri = OS.Path.toFileURI(file.path);
@@ -110,6 +123,10 @@ var SearchEngines = {
 
     saveEnginesToZipFile(engines, file) {
         return Promise.resolve().then(() => {
+            if (engines.length === 0) {
+                reject(Error("the given engines array must not be empty"));
+            }
+
             let zw = Cc["@mozilla.org/zipwriter;1"]
                         .createInstance(Ci.nsIZipWriter);
             zw.open(file,
