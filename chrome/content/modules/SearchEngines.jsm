@@ -89,6 +89,18 @@ var SearchEngines = {
     },
 
 
+    /*
+     * Returns true if there is at least one search engine installed by the
+     * user himself, false otherwise.
+     */
+    haveCustomEngines() {
+        let engines = Services.search.getVisibleEngines();
+        let defaults = Services.search.getDefaultEngines();
+
+        return engines.some(e => !defaults.includes(e));
+    },
+
+
     addEngineFromXmlFile(file) {
         return new Promise((resolve, reject) => {
             let uri = OS.Path.toFileURI(file.path);

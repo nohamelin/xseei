@@ -45,22 +45,20 @@ var xseei = {
         return this.strings = document.getElementById("xseei-strings");
     },
 
-    get SearchEngines() {
-        delete this.SearchEngines;
-        Cu.import("chrome://xseei/content/modules/SearchEngines.jsm", this);
-        return this.SearchEngines;
-    },
+    exportSelectedButton: null,
+    exportCustomsButton: null,
 
-    get exportSelectedButton() {
-        delete this.exportSelectedButton;
-        return this.exportSelectedButton = document.getElementById(
-                                                    "xseei-export-selected");
-    },
 
     ////////////////////////////////////////////////////////////////////////////
 
     handleEvent(event) {
         switch (event.type) {
+            case "DOMContentLoaded":
+                this.onLoad();
+                break;
+            case "unload":
+                this.onUnload();
+                break;
             case "select":
                 if (event.target.id === "engineList") {
                     this.onTreeSelect();
@@ -70,8 +68,48 @@ var xseei = {
     },
 
 
+    observe(subject, topic, data) {
+        if (topic === "browser-search-engine-modified") {
+            switch (data) {
+                case "engine-added":
+                case "engine-removed":
+                    this.onEnginesCountChanged();
+                    break;
+            }
+        }
+    },
+
+
+    onLoad() {
+        Cu.import("chrome://xseei/content/modules/SearchEngines.jsm", this);
+
+        this.exportSelectedButton = document.getElementById(
+                                             "xseei-export-selected");
+        this.exportCustomsButton = document.getElementById(
+                                            "xseei-export-customs");
+
+        this.onEnginesCountChanged();
+        Services.obs.addObserver(this,
+                                 "browser-search-engine-modified",
+                                 false);
+    },
+
+
+    onUnload() {
+        Services.obs.removeObserver(this,
+                                    "browser-search-engine-modified",
+                                    false);
+    },
+
+
     onTreeSelect() {
         this.exportSelectedButton.disabled = gEngineView.selectedIndex == -1;
+    },
+
+
+    onEnginesCountChanged() {
+        this.exportCustomsButton.disabled = !this.SearchEngines
+                                                 .haveCustomEngines();
     },
 
 
@@ -214,4 +252,6 @@ var xseei = {
 };
 
 
+window.addEventListener("DOMContentLoaded", xseei, false);
+window.addEventListener("unload", xseei, false);
 window.addEventListener("select", xseei, false);
