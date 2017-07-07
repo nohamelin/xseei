@@ -2,20 +2,20 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!-- It refers to a search engine -->
-<!ENTITY exportSelectedButton.label "Export to File…">
+<!-- It's an action; it refers to a search engine -->
+<!ENTITY exportSelectedButton.label "Export…">
 <!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportSelectedButton.accesskey "E">
 <!-- Don't translate the "OpenSearch" string -->
-<!ENTITY import.description "You can import search engines from local XML files in the OpenSearch format">
+<!ENTITY import.description "You can import search engines from XML files in the OpenSearch format">
 <!-- Translate it in the same way as the "Learn More" buttons present in other panes of the Preferences page -->
 <!ENTITY import.learn.label "Learn More">
 <!ENTITY importButton.label "Import Search Engines from Files…">
 <!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY importButton.accesskey "I">
-<!ENTITY exportAllButton.label "Export All Search Engines to File…">
+<!ENTITY exportAllButton.label "Export All Search Engines…">
 <!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportAllButton.accesskey "A">
-<!ENTITY exportNonDefaultsButton.label "Export All Non-Defaults Search Engines to File…">
+<!ENTITY exportNonDefaultsButton.label "Export All Non-Defaults Search Engines…">
 <!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportNonDefaultsButton.accesskey "N">

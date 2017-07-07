@@ -2,8 +2,8 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!-- It refers to a search engine -->
-<!ENTITY exportSelectedButton.label "Exportar a archivo…">
+<!-- It's an action; it refers to a search engine -->
+<!ENTITY exportSelectedButton.label "Exportar…">
 <!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
 <!ENTITY exportSelectedButton.accesskey "x">
 <!-- Don't translate the "OpenSearch" string -->
@@ -13,9 +13,9 @@
 <!ENTITY importButton.label "Importar buscadores desde archivos…">
 <!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY importButton.accesskey "I">
-<!ENTITY exportAllButton.label "Exportar todos los buscadores a archivo…">
+<!ENTITY exportAllButton.label "Exportar todos los buscadores…">
 <!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportAllButton.accesskey "t">
-<!ENTITY exportNonDefaultsButton.label "Exportar todos los buscadores no predeterminados a archivo…">
+<!ENTITY exportNonDefaultsButton.label "Exportar todos los buscadores no predeterminados…">
 <!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportNonDefaultsButton.accesskey "N">

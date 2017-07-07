@@ -34,7 +34,7 @@
     <groupbox id="oneClickSearchProvidersGroup">
 
         <button id="xseei-export-selected" hidden="true"
-                class="searchEngineAction"
+                class="searchEngineAction accessory-button"
                 label="&exportSelectedButton.label;"
                 accesskey="&exportSelectedButton.accesskey;"
                 command="xseei_exportSelectedEngineToFile"
