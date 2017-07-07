@@ -11,3 +11,5 @@ locale      xseei       es-ES           chrome/locale/es-ES/
 
 # XUL overlays
 overlay     about:preferences           chrome://xseei/content/in-prefs.xul
+
+style       about:preferences           chrome://xseei/skin/in-prefs.pre53.css      appversion<52.*

@@ -6,10 +6,12 @@
 
 
 /*
- * It matches the styling applied upstream to #restoreDefaultSearchEngines
- * and others.
+ * It's required only with Fx versions older to 53.0, as later it's properly
+ * done thanks to:
+ *   https://bugzilla.mozilla.org/show_bug.cgi?id=1324170
+ *
+ * !important is needed to override !important upstream usage in common.css
  */
-#xseei-import,
-#xseei-export-all {
-    margin-inline-start: 0;
+#xseei-learn-more {
+    margin-inline-start: 1.5em !important;
 }

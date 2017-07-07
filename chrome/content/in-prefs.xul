@@ -46,7 +46,7 @@
                     &import.description;
                 </label>
                 <label id="xseei-learn-more"
-                       class="text-link"
+                       class="learnMore text-link"
                        value="&import.learn.label;"
                        href="https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox"/>
                 <spacer flex="999"/>  <!-- Allow the description to wrap -->
