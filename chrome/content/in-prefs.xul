@@ -41,7 +41,7 @@
                 disabled="true"/>
 
         <vbox id="xseei-import-box">
-            <hbox pack="start">
+            <hbox pack="start" align="center">
                 <label id="xseei-import-about" flex="1">
                     &import.description;
                 </label>
@@ -50,16 +50,15 @@
                        value="&import.learn.label;"
                        href="https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox"/>
                 <spacer flex="999"/>  <!-- Allow the description to wrap -->
-            </hbox>
-
-            <hbox align="center">
                 <button id="xseei-import"
+                        class="accessory-button"
                         label="&importButton.label;"
                         accesskey="&importButton.accesskey;"
                         command="xseei_importEnginesFromFiles"/>
             </hbox>
+
             <separator class="thin"/>
-            <hbox align="center">
+            <hbox align="center" pack="end">
                 <button id="xseei-export-all"
                         label="&exportAllButton.label;"
                         accesskey="&exportAllButton.accesskey;"
