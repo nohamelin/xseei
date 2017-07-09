@@ -5,4 +5,4 @@
 pref("extensions.xseei.exporter.useMozNamespaceAsDefault", true);
 pref("extensions.xseei.exporter.useTemporaryFile", true);
 pref("extensions.xseei.exportAll.defaultFileName", "searchengines %Y-%m-%d");
-pref("extensions.xseei.exportNonDefaults.defaultFileName", "searchengines (no defaults) %Y-%m-%d");
+pref("extensions.xseei.exportNonDefaults.defaultFileName", "searchengines (defaults skipped) %Y-%m-%d");
