@@ -170,8 +170,10 @@ var xseei = {
         let now = new Date();
         // toLocaleFormat expects the same format as strftime() in C:
         //   http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html
-        let filename = now.toLocaleFormat(filenameFormat)
-                          .replace(/\//gm, "-");
+        let filename = ("toLocaleFormat" in now)    // Pre Fx 57
+                        ? now.toLocaleFormat(filenameFormat)
+                        : filenameFormat;       // TODO: remove format chars(?)
+        filename = filename.replace(/\//gm, "-");
 
         if (!filename.endsWith(".zip"))
             filename += ".zip";
