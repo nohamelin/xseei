@@ -2,17 +2,21 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!-- It refers to a search engine -->
-<!ENTITY exportSelectedButton.label "导出为文件…">
-<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!-- It's an action; it refers to a search engine -->
+<!ENTITY exportSelectedButton.label "导出…">
+<!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportSelectedButton.accesskey "E">
 <!-- Don't translate the "OpenSearch" string -->
 <!ENTITY import.description "您可以从本地的 XML 文件导入 OpenSearch 格式的搜索引擎">
 <!-- Translate it in the same way as the "Learn More" buttons present in other panes of the Preferences page -->
 <!ENTITY import.learn.label "详细了解">
-<!ENTITY importButton.label "从文件导入搜索引擎…">
-<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!-- It's an action; it refers to a search engine -->
+<!ENTITY importButton.label "导入…">
+<!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY importButton.accesskey "I">
-<!ENTITY exportAllButton.label "导出所有搜索引擎为一个文件…">
-<!-- Whenever possible, use different accesskeys to those already used in the Search pane -->
+<!ENTITY exportAllButton.label "导出所有搜索引擎…">
+<!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportAllButton.accesskey "A">
+<!ENTITY exportNonDefaultsButton.label "导出所有非默认搜索引擎…">
+<!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
+<!ENTITY exportNonDefaultsButton.accesskey "N">
