@@ -217,7 +217,7 @@ var xseei = {
 
                 let files = fp.files;
                 while (files.hasMoreElements()) {
-                    let file = files.getNext().QueryInterface(Ci.nsILocalFile);
+                    let file = files.getNext().QueryInterface(Ci.nsIFile);
                     xmlFiles.push(file);
                 }
 
