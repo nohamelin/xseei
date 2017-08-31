@@ -239,7 +239,6 @@ var xseei = {
                         // I'm unsure how the UI should manage multiple errors.
                     });
                 });
-
                 sequence.then(() => {
                     // Ensure the last imported engine is visible and selected
                     if (importedEngines.length > 0) {
@@ -247,7 +246,7 @@ var xseei = {
                         gEngineView.ensureRowIsVisible(gEngineView.lastIndex);
                         document.getElementById("engineList").focus();
                     }
-                });
+                }).catch(Cu.reportError);
             }
         });
     }
