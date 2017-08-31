@@ -53,18 +53,6 @@ const ABOUT_MOZPARAMS_EXPORT_MSG =
     "the application, they were omitted here.";
 
 
-function appendTextNode(document, namespace, localName, value) {
-    if (!value)
-        return null;
-
-    let node = document.createElementNS(namespace, localName);
-    node.appendChild(document.createTextNode(value));
-    document.documentElement.appendChild(node);
-    document.documentElement.appendChild(document.createTextNode("\n"));
-    return node;
-}
-
-
 /*
  * A object encapsulating a set of utilities to deal with search engines.
  *
@@ -101,6 +89,10 @@ var SearchEngines = {
     },
 
 
+    /*
+     * A Promise-powered wrapper for the callback-based addEngine method
+     * from nsIBrowserSearchService.
+     */
     addEngineFromXmlFile(file) {
         return new Promise((resolve, reject) => {
             let uri = OS.Path.toFileURI(file.path);
@@ -136,7 +128,7 @@ var SearchEngines = {
     saveEnginesToZipFile(engines, file) {
         return Promise.resolve().then(() => {
             if (engines.length === 0) {
-                reject(Error("the given engines array must not be empty"));
+                throw Error("the given engines array must not be empty");
             }
 
             let zw = Cc["@mozilla.org/zipwriter;1"]
@@ -168,19 +160,21 @@ var SearchEngines = {
 
 
     saveEngineToXmlFile(engine, file) {
-        let serializer = Cc["@mozilla.org/xmlextras/xmlserializer;1"]
-                                .createInstance(Ci.nsIDOMSerializer);
+        return Promise.resolve().then(() => {
+            let serializer = Cc["@mozilla.org/xmlextras/xmlserializer;1"]
+                                    .createInstance(Ci.nsIDOMSerializer);
 
-        let doc = this.serializeEngineToDocument(engine);
-        let data = serializer.serializeToString(doc);
+            let doc = this.serializeEngineToDocument(engine);
+            let data = serializer.serializeToString(doc);
 
-        let useTmpFile = Services.prefs.getBoolPref(
-                            "extensions.xseei.exporter.useTemporaryFile");
-        let tmpFile = useTmpFile ? file.path + ".tmp" : null;
+            let useTmpFile = Services.prefs.getBoolPref(
+                                "extensions.xseei.exporter.useTemporaryFile");
+            let tmpFile = useTmpFile ? file.path + ".tmp" : null;
 
-        return OS.File.writeAtomic(file.path,
-                                   data,
-                                   {encoding: "utf-8", tmpPath: tmpFile});
+            return OS.File.writeAtomic(file.path,
+                                       data,
+                                       {encoding: "utf-8", tmpPath: tmpFile});
+        });
     },
 
 
@@ -229,6 +223,7 @@ var SearchEngines = {
 
 
     /*
+     * A helper for serializeEngineToDocument.
      *
      * SOURCE:
      *   https://hg.mozilla.org/releases/mozilla-release/file/4e188de86d86/toolkit/components/search/nsSearchService.js#l1293
@@ -296,3 +291,15 @@ var SearchEngines = {
         return name.substring(0, MAX_ENGINE_FILENAME_LENGTH);
     }
 };
+
+
+function appendTextNode(document, namespace, localName, value) {
+    if (!value)
+        return null;
+
+    let node = document.createElementNS(namespace, localName);
+    node.appendChild(document.createTextNode(value));
+    document.documentElement.appendChild(node);
+    document.documentElement.appendChild(document.createTextNode("\n"));
+    return node;
+}
