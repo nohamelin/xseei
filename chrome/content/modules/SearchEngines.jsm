@@ -46,12 +46,6 @@ Object.defineProperty(this, "emptyEngineDoc", {
 
 const MAX_ENGINE_FILENAME_LENGTH = 60;
 
-const ABOUT_MOZPARAMS_EXPORT_MSG =
-    "The original definition of this search engine included too some " +
-    "non-standard 'MozParam' parameters. As they are recognized by " +
-    "Firefox only if they are found in an engine included by default in " +
-    "the application, they were omitted here.";
-
 
 /*
  * A object encapsulating a set of utilities to deal with search engines.
@@ -244,8 +238,6 @@ var SearchEngines = {
         //   https://bugzilla.mozilla.org/show_bug.cgi?id=351817
         // Or simply to include some extra usage info, e.g.:
         //   https://bugzilla.mozilla.org/show_bug.cgi?id=587780
-        //
-        // For the moment, we aren't exporting these.
         let hasMozParams = Object.keys(engineUrl.mozparams).length > 0;
 
         for (let i = 0; i < engineUrl.params.length; ++i) {
@@ -260,9 +252,11 @@ var SearchEngines = {
             url.appendChild(param);
         }
         if (hasMozParams) {
-            url.appendChild(doc.createTextNode("\n  "));
-            url.appendChild(doc.createComment(ABOUT_MOZPARAMS_EXPORT_MSG));
-            // TODO: Export the MozParams too (?)
+            Services.console.logStringMessage(
+                "Found some non-standard 'MozParam' parameters in the " +
+                "definition of the exported search engine. As these " +
+                "parameters are recognized by Firefox only for default " +
+                "engines, they were skipped.");
         }
         url.appendChild(doc.createTextNode("\n"));
 
