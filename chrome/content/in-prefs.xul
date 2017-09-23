@@ -42,7 +42,9 @@
 
         <vbox id="xseei-import-box">
             <hbox pack="start" align="center">
-                <label id="xseei-import-about" flex="1">
+                <label id="xseei-import-about"
+                       class="tail-with-learn-more"
+                       flex="1">
                     &import.description;
                 </label>
                 <label id="xseei-learn-more"
