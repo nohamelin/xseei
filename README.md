@@ -13,13 +13,13 @@ It applies to [Firefox ESR](https://www.mozilla.org/firefox/organizations/faq/) 
 
 
 #### Firefox 57 and later
-Being a legacy add-on, it can't be installed in Firefox 57 (a.k.a Firefox Quantum) and later versions, where only add-ons built using the WebExtensions model are accepted. Sadly, it's [not possible yet to port this add-on to WebExtensions](https://github.com/nohamelin/xseei/issues/1), and probably it will never be.
+Being a legacy add-on, it can't be installed in Firefox 57 (a.k.a Firefox Quantum) and later versions, where only add-ons built using the WebExtensions model are accepted. Sadly, it's [not possible yet to port this add-on to WebExtensions](https://github.com/nohamelin/xseei/issues/1).
 
 As an alternative, I rewrote the main functions of the add-on as single-file scripts that can be run manually via the Scratchpad Firefox tool:
 * [xseei.import.js](https://gist.github.com/nohamelin/8e2e1b50dc7d97044992ae981487c6ec): to import search engines.
 * [xseei.export-all.js](https://gist.github.com/nohamelin/6af8907ca2dd90a9c870629c396c9521): to export all your search engines to a single ZIP file.
 
-Check the initial comments in the scripts themselves for further information.
+Check the initial comments inside each file for further information.
 
 
 ### Resources
