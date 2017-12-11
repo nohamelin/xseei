@@ -142,7 +142,20 @@ var SearchEngines = {
                 let str = serializer.serializeToString(doc);
                 let istream = converter.convertToInputStream(str);
 
-                zw.addEntryStream(this.sanitizeEngineName(engine.name) + ".xml",
+                // Engines with very similar names can end with the same
+                // sanitized filename; we catch these to add a proper suffix.
+                let filename = this.sanitizeEngineName(engine.name);
+                if (zw.hasEntry(filename + ".xml")) {
+                    let candidateFilename;
+                    let apparitions = 1;
+                    do {
+                        candidateFilename = `${filename} (${apparitions})`;
+                        apparitions += 1;
+                    } while (zw.hasEntry(candidateFilename + ".xml"));
+                    filename = candidateFilename;
+                }
+
+                zw.addEntryStream(filename + ".xml",
                                   Date.now() * 1000,
                                   Ci.nsIZipWriter.COMPRESSION_DEFAULT,
                                   istream,
