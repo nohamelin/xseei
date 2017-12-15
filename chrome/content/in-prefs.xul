@@ -42,21 +42,21 @@
 
         <vbox id="xseei-import-box">
             <hbox pack="start" align="center">
-                <label id="xseei-import-about"
-                       class="tail-with-learn-more"
-                       flex="1">
+                <label id="xseei-import-about" flex="1">
                     &import.description;
                 </label>
-                <label id="xseei-learn-more"
-                       class="learnMore text-link"
-                       value="&import.learn.label;"
-                       href="https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox"/>
                 <spacer flex="999"/>  <!-- Allow the description to wrap -->
                 <button id="xseei-import"
                         class="accessory-button"
                         label="&importButton.label;"
                         accesskey="&importButton.accesskey;"
                         command="xseei_importEnginesFromFiles"/>
+            </hbox>
+            <hbox align="start">
+                <label id="xseei-learn-more"
+                       class="learnMore text-link indent"
+                       value="&import.learn.label;"
+                       href="https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox"/>
             </hbox>
 
             <separator class="thin"/>
