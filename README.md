@@ -9,7 +9,7 @@ A lightweight, XUL-based (a.k.a. "legacy") add-on for the Mozilla Firefox web br
 #### Firefox 45 to 56
 The latest public release can be installed from the [page of the add-on in addons.mozilla.org (AMO)](https://addons.mozilla.org/addon/search-engines-export-import).
 
-It applies to [Firefox ESR](https://www.mozilla.org/firefox/organizations/faq/) too, whose release 52 is supported officially by Mozilla until June 2018.
+It applies to [Firefox ESR](https://www.mozilla.org/firefox/organizations/faq/) too, whose release 52 is supported officially by Mozilla until August 2018.
 
 
 #### Firefox 57 and later
