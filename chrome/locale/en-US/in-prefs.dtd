@@ -17,6 +17,6 @@
 <!ENTITY exportAllButton.label "Export All Search Engines…">
 <!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportAllButton.accesskey "A">
-<!ENTITY exportNonDefaultsButton.label "Export All Non-Defaults Search Engines…">
+<!ENTITY exportNonDefaultsButton.label "Export All Non-Default Search Engines…">
 <!-- Whenever possible, use different accesskeys to those already used in the pane where search engines are managed -->
 <!ENTITY exportNonDefaultsButton.accesskey "N">
