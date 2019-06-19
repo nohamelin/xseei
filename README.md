@@ -7,7 +7,7 @@ A lightweight, XUL-based (a.k.a. "legacy") add-on for the Mozilla Firefox web br
 ### Install
 
 #### Firefox 45 to 56
-While the public releases aren't available anymore though addons.mozilla.org (AMO), the latest public build can be downloaded from the [releases page](https://github.com/nohamelin/xseei/releases).
+While the public releases aren't available anymore via addons.mozilla.org (AMO), the latest public build can be downloaded from the [releases page](https://github.com/nohamelin/xseei/releases).
 
 
 #### Firefox 57 and later
