@@ -7,11 +7,11 @@ A lightweight, XUL-based (a.k.a. "legacy") add-on for the Mozilla Firefox web br
 ### Install
 
 #### Firefox 45 to 56
-The latest public release can be still installed from the [archived page of the add-on in addons.mozilla.org (AMO)](https://addons.mozilla.org/addon/search-engines-export-import).
+While the public releases aren't available anymore though addons.mozilla.org (AMO), the latest public build can be downloaded from the [releases page](https://github.com/nohamelin/xseei/releases).
 
 
 #### Firefox 57 and later
-Being a legacy add-on, it can't be installed in Firefox 57 (a.k.a Firefox Quantum) and later versions, where only add-ons built using the WebExtensions model are accepted. Sadly, it's [not possible yet to port this add-on to WebExtensions](https://github.com/nohamelin/xseei/issues/1).
+Being a XUL-based add-on, it can't be installed in Firefox 57 (a.k.a Firefox Quantum) and later versions, where only add-ons built using the WebExtensions model are accepted. Sadly, it's [not possible yet to port this add-on to WebExtensions](https://github.com/nohamelin/xseei/issues/1).
 
 As an alternative, I rewrote the main functions of the add-on as single-file scripts that can be run manually via the Scratchpad Firefox tool.
 These scripts work locally and they don't depend on any online service (no data is send to any remote network):
@@ -22,9 +22,9 @@ These scripts work locally and they don't depend on any online service (no data 
 Check the initial comments inside each file for further information.
 
 
-##### What about Pale Moon, Waterfox and other Firefox forks still supporting XUL-based add-dons?
+##### What about Pale Moon, Waterfox or other Firefox forks still supporting XUL-based add-dons?
 
-I haven't tested the add-on with these applications, and I haven't planned to actively support them in future releases. Reports from users trying the add-on with these are welcome, though.
+I haven't tested the add-on with these applications, and I haven't planned to support them. Reports from users trying the add-on with these are welcome, though.
 
 
 ### Resources
