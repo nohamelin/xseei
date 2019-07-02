@@ -2,12 +2,9 @@ XML Search Engines Exporter/Importer (XSEEI)
 --------------------------------------------
 
 A lightweight, XUL-based (a.k.a. "legacy") add-on for the Mozilla Firefox web browser to import and export your installed search engines (sometimes called "search plugins") from and to XML files in the OpenSearch format.
+These features are accessible from the Search pane of the Preferences page in Firefox. No toolbar button or global keyboard shortcut is provided.
 
-    This add-on is NOT available anymore for current Firefox releases; see below.
-
-### Why
-
-Firefox 45 changed how the search engines installed by the user are stored in disk: instead of plain XML files, a unique compressed and hashed file is used. It was in order to provide a better protection against search hijacking, but it made impossible to edit or even inspect the data of these engines to knowledgeable users without the use of additional *ad hoc* tools; even adding a new search engine from the local file system became an awkward task.
+    This add-on is NOT available anymore for new Firefox releases; see below.
 
 
 ### Install
@@ -33,6 +30,11 @@ Check the initial comments inside each file for further information.
 I haven't tested the add-on with these applications, and I haven't planned to support them.
 
 
+### Original Motivation
+
+Firefox 45 changed how the search engines installed by the user are stored in disk: instead of plain XML files, a unique compressed and hashed file is used. It was in order to provide a better protection against search hijacking, but it made impossible to edit or even inspect the data of these engines to knowledgeable users without the use of additional *ad hoc* tools; even adding a new search engine from the local file system became an awkward task.
+
+
 ### Resources
 
 * [Creating OpenSearch plugins for Firefox | Mozilla Developer Network](https://developer.mozilla.org/en-US/Add-ons/Creating_OpenSearch_plugins_for_Firefox)
@@ -47,7 +49,7 @@ I haven't tested the add-on with these applications, and I haven't planned to su
 
 ### Contact
 
-* Questions and bug reports are tracked in the [issues](https://github.com/nohamelin/xseei/issues) page. You will need to have a GitHub account to post here. Alternatively, there is a [thread in the MozillaZine forums](http://forums.mozillazine.org/viewtopic.php?f=48&t=3020165) open to general discussion.
+Questions and bug reports are still tracked in the [issues](https://github.com/nohamelin/xseei/issues) page. You will need to have a GitHub account to post here. Alternatively, there is a [thread in the MozillaZine forums](http://forums.mozillazine.org/viewtopic.php?f=48&t=3020165) open to general discussion.
 
 
 ### Acknowledgments
