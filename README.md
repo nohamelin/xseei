@@ -2,9 +2,11 @@ XML Search Engines Exporter/Importer (XSEEI)
 --------------------------------------------
 
 A lightweight, XUL-based (a.k.a. "legacy") add-on for the Mozilla Firefox web browser to import and export your installed search engines (sometimes called "search plugins") from and to XML files in the OpenSearch format.
-These features are accessible from the Search pane of the Preferences page in Firefox. No toolbar button or global keyboard shortcut is provided.
 
     This add-on is NOT available anymore for new Firefox releases; see below.
+
+After installation, the import/export tools are accessible from the Search pane of the Preferences page in Firefox.
+No toolbar button or global keyboard shortcut is provided.
 
 
 ### Install
